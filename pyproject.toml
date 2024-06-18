@@ -1,0 +1,27 @@
+[tool.poetry]
+name = "aio-crypto"
+version = "0.1.0"
+description = ""
+authors = ["Kennedy Bacelar <kennedybacelar@gmail.com>"]
+readme = "README.md"
+
+[tool.poetry.dependencies]
+python = "^3.10"
+aiohttp = "^3.9.5"
+asyncpg = "^0.29.0"
+sqlalchemy = {extras = ["asyncio"], version = "^2.0.30"}
+black = "^24.4.2"
+isort = "^5.13.2"
+flake8 = "^7.1.0"
+mypy = "^1.10.0"
+tox = "^4.15.1"
+pytest = "^8.2.2"
+pytest-aiohttp = "^1.0.5"
+pytest-asyncio = "^0.23.7"
+aiohttp-utils = "^3.2.1"
+watchdog = "^4.0.1"
+
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
