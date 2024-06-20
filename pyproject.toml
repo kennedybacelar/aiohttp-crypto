@@ -20,6 +20,8 @@ pytest-aiohttp = "^1.0.5"
 pytest-asyncio = "^0.23.7"
 aiohttp-utils = "^3.2.1"
 watchdog = "^4.0.1"
+ccxt = "^4.3.47"
+sqlmodel = "^0.0.19"
 
 
 [build-system]

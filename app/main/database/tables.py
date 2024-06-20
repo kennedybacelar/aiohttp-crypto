@@ -1,19 +1,24 @@
-from sqlalchemy import Column, Integer, String
+from sqlalchemy import TIMESTAMP, Column, Float, Integer, String
 from sqlalchemy.orm import declarative_base
 
 Base = declarative_base()
 
 
-class Users(Base):  # type: ignore
-    __tablename__ = "users"
+class Currency(Base):
+    __tablename__ = "currencies"
 
-    id = Column(Integer, primary_key=True)
-    name = Column(String(255), nullable=False)
-
-    def __repr__(self):
-        return f"<Users(id={self.id}, name={self.name})>"
+    id = Column(Integer, primary_key=True, default=None)
+    currency = Column(String)
+    date_ = Column(TIMESTAMP)
+    price = Column(Float)
 
     def to_dict(self):
         return {
-            column.name: getattr(self, column.name) for column in self.__table__.columns
+            "id": self.id,
+            "currency": self.currency,
+            "date_": self.date_.isoformat(),
+            "price": self.price,
         }
+
+    def __repr__(self):
+        return f"<Currency(id={self.id}, currency={self.currency}, date_={self.date_}, price={self.price})>"
